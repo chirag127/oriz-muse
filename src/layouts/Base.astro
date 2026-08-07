@@ -1,0 +1,39 @@
+---
+import OzToolShell from '@chirag127/oz-chrome/components/OzToolShell.astro'
+import '../styles/global.css'
+
+interface Props {
+  title?: string
+  description?: string
+}
+const {
+  title = 'oriz-muse — AI writing studio',
+  description = 'A romantic writing atelier in your browser. Generate stories, poems, lyrics, blogs & essays, continue your draft, restyle prose, keep a prompt library, and save drafts — 100% client-side, no signup.',
+} = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://muse.oriz.in" />
+    <link rel="canonical" href="https://muse.oriz.in" />
+  </head>
+  <body>
+    <OzToolShell site="muse" title="Muse" wordmarkHref="https://oriz.in">
+      <a slot="nav" href="https://oriz.in" rel="home">oriz.in</a>
+      <slot />
+      <Fragment slot="footer">
+        <a href="https://github.com/chirag127/oriz-muse">Source</a>
+        <span>100% client-side · no upload · no signup</span>
+      </Fragment>
+    </OzToolShell>
+  </body>
+</html>

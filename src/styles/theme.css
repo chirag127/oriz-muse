@@ -1,0 +1,85 @@
+/*
+ * oriz-muse — bespoke theme. Romantic atelier: ink + blush + gold-leaf.
+ * Overrides the @chirag127/oz-tokens-base contract AFTER it loads.
+ * Also defines the extra tokens oz-chrome/styles.css reads
+ * (--oz-paper/--oz-ink/--oz-rule/--oz-header-h/--oz-container/--oz-text-*).
+ */
+@import '@fontsource-variable/cormorant';
+@import '@fontsource-variable/eb-garamond';
+
+:root {
+  color-scheme: light;
+
+  /* palette — warm parchment, deep ink, blush accent, gold-leaf highlight */
+  --muse-parchment: #f7f1e6;
+  --muse-parchment-2: #efe6d4;
+  --muse-ink: #241a17;
+  --muse-ink-mute: #6b5a52;
+  --muse-blush: #b04a5a;
+  --muse-blush-soft: #d98a94;
+  --muse-gold: #b8893a;
+  --muse-gold-soft: #e6c98a;
+  --muse-rule: #d8c8ad;
+
+  /* --- oz contract overrides --- */
+  --oz-bg: var(--muse-parchment);
+  --oz-fg: var(--muse-ink);
+  --oz-surface: #fffaf0;
+  --oz-muted: var(--muse-ink-mute);
+  --oz-border: var(--muse-rule);
+  --oz-accent: var(--muse-blush);
+  --oz-accent-fg: #fff7f1;
+
+  --oz-font-display: 'Cormorant Variable', 'Cormorant', Georgia, serif;
+  --oz-font-body: 'EB Garamond Variable', 'EB Garamond', Georgia, serif;
+  --oz-font-mono: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* --- extra tokens oz-chrome reads --- */
+  --oz-paper: color-mix(in oklab, var(--muse-parchment) 88%, #fff 12%);
+  --oz-paper-2: var(--muse-parchment-2);
+  --oz-ink: var(--muse-ink);
+  --oz-ink-mute: var(--muse-ink-mute);
+  --oz-rule: var(--muse-rule);
+  --oz-header-h: 4rem;
+  --oz-container: 74rem;
+  --oz-text-sm: 0.9rem;
+  --oz-text-md: 1.05rem;
+  --oz-text-lg: 1.5rem;
+  --oz-z-overlay: 1000;
+  --oz-space-5: 1.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --muse-parchment: #1a1512;
+    --muse-parchment-2: #221b16;
+    --muse-ink: #f0e6d6;
+    --muse-ink-mute: #b9a794;
+    --muse-blush: #e08b97;
+    --muse-blush-soft: #b8636f;
+    --muse-gold: #e6c98a;
+    --muse-gold-soft: #b8893a;
+    --muse-rule: #3a2f26;
+
+    --oz-surface: #241c16;
+    --oz-accent-fg: #1a1512;
+    --oz-paper: #211a15;
+  }
+}
+
+/* paper-grain backdrop — cheap layered gradients, no image request */
+body {
+  background-color: var(--muse-parchment);
+  background-image:
+    radial-gradient(120% 120% at 12% -10%, color-mix(in oklab, var(--muse-gold-soft) 22%, transparent) 0%, transparent 45%),
+    radial-gradient(120% 120% at 92% 0%, color-mix(in oklab, var(--muse-blush-soft) 18%, transparent) 0%, transparent 40%),
+    repeating-linear-gradient(0deg, transparent, transparent 3px, color-mix(in oklab, var(--muse-ink) 2.5%, transparent) 3px, color-mix(in oklab, var(--muse-ink) 2.5%, transparent) 4px);
+  background-attachment: fixed;
+}
+
+/* signature: quill ink-flow underline reveal for streaming text */
+@keyframes muse-ink-flow {
+  from { background-size: 0% 2px; }
+  to { background-size: 100% 2px; }
+}

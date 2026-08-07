@@ -1,0 +1,99 @@
+@import '@chirag127/oz-tokens-base';
+@import '@chirag127/oz-chrome/styles.css';
+@import './theme.css';
+
+body {
+  min-height: 100vh;
+}
+
+.muse-hero {
+  text-align: center;
+  padding: clamp(2rem, 6vw, 4.5rem) 1rem 2rem;
+}
+.muse-hero__kicker {
+  font-family: var(--oz-font-body);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--muse-gold);
+  margin: 0 0 0.75rem;
+}
+.muse-hero__title {
+  font-family: var(--oz-font-display);
+  font-weight: 600;
+  font-size: clamp(2.6rem, 8vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--muse-ink);
+}
+.muse-hero__title em {
+  font-style: italic;
+  color: var(--muse-blush);
+}
+.muse-hero__sub {
+  max-width: 42ch;
+  margin: 1rem auto 0;
+  font-size: 1.15rem;
+  color: var(--muse-ink-mute);
+}
+.muse-hero__flourish {
+  width: 8rem;
+  height: 1px;
+  margin: 1.5rem auto 0;
+  background: linear-gradient(90deg, transparent, var(--muse-gold), transparent);
+  position: relative;
+}
+.muse-hero__flourish::after {
+  content: '❦';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--muse-gold);
+  background: var(--muse-parchment);
+  padding: 0 0.5rem;
+  font-size: 1rem;
+}
+
+.muse-feats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 2rem auto 0;
+  max-width: 60rem;
+}
+.muse-feat {
+  border: 1px solid var(--muse-rule);
+  border-radius: var(--oz-radius-l);
+  background: color-mix(in oklab, var(--oz-surface) 70%, transparent);
+  padding: 1rem 1.1rem;
+}
+.muse-feat h3 {
+  font-family: var(--oz-font-display);
+  font-size: 1.3rem;
+  margin: 0 0 0.25rem;
+  color: var(--muse-blush);
+}
+.muse-feat p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muse-ink-mute);
+}
+
+.muse-cta {
+  display: inline-block;
+  margin-top: 1.75rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--oz-radius-full);
+  background: var(--muse-blush);
+  color: var(--oz-accent-fg);
+  text-decoration: none;
+  font-family: var(--oz-font-body);
+  font-size: 1.05rem;
+  box-shadow: 0 6px 20px -8px color-mix(in oklab, var(--muse-blush) 60%, transparent);
+  transition: transform var(--oz-dur-fast) var(--oz-ease-out);
+}
+.muse-cta:hover {
+  transform: translateY(-2px);
+}
