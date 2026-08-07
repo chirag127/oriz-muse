@@ -1,0 +1,101 @@
+# Muse — Free AI Writing Studio
+
+Live app: https://muse.oriz.in
+
+Muse is a free, private, 100% client-side AI writing studio that runs entirely in your browser. There is no upload, no signup, and no API key. Every keystroke and every draft stays on your device (stored in IndexedDB). AI generation runs through g4f (gpt4free) via the @chirag127/oz-ai package with multi-provider failover, so it works without an API key — and if every provider is down, your text is untouched and you keep writing by hand.
+
+## Hero
+
+The writing atelier.
+
+Free AI writing studio — stories, poems and lyrics. Generate, continue, or rewrite prose in any voice. Runs entirely in your browser — no upload, no signup, no cost.
+
+## What Muse does
+
+Muse is a free, private AI writing tool for drafting short stories, poetry, song lyrics, blog posts, essays, and screenplays. Seed a topic and it drafts a passage, hands you the pen to continue, or recasts your text in a chosen style — tuned by genre, tone, and length. A prompt library and saved drafts live only on this device.
+
+### Generate
+
+Pick a genre (story, poem, lyrics, blog, essay, or screenplay), seed a topic, and tune style, tone, and length. The result streams in live with a signature gold-nib ink-flow motion.
+
+### Continue
+
+Hand the pen to the muse. Paste an existing draft and it matches your voice, tense, and style, then adds what comes next.
+
+### Rewrite
+
+Recast any passage into a different style (Noir, Gothic, Hemingway, Shakespearean, Poetic, Minimalist, Whimsical, Academic, Conversational, Romantic) and a different tone.
+
+### Prompt library
+
+Curated starter prompts per genre. One click loads a prompt into the studio.
+
+### Drafts
+
+Save, reload, and delete drafts. Drafts are stored only on this device (IndexedDB) and never leave your browser.
+
+### Preview
+
+Live Markdown preview, with the markdown parser (marked) lazy-loaded on demand.
+
+### Import / export
+
+Drag-drop a .md or .txt file to load it into the studio. Export your work as Markdown.
+
+### Streaming
+
+Text streams in token by token with a signature gold-nib ink-flow animation as the muse writes.
+
+## Genres
+
+- Story — short fiction and scenes. Vivid, immersive prose with concrete sensory detail, clear scene, and emotional truth.
+- Poem — verse in any form. Fresh, image-driven verse attending to rhythm, line breaks, and sound.
+- Lyrics — songs with structure. Singable lyrics with clear verse / chorus / bridge structure, a memorable hook, and internal rhyme.
+- Blog — posts and articles. Engaging, well-structured posts with a strong hook, scannable sections, and a clear takeaway.
+- Essay — argument and reflection. A clear thesis developed with reasoning and example, closing with resonance.
+- Screenplay — scenes in script form. Standard screenplay format: scene headings, action lines, character cues, and sharp dialogue.
+
+## Styles
+
+Poetic (lyrical, image-rich), Minimalist (spare, understated), Noir (shadowy, hard-boiled), Whimsical (playful, light), Gothic (dark, romantic, dread), Academic (formal, precise), Conversational (warm, casual), Shakespearean (early-modern verse), Hemingway (terse, declarative), Romantic (ardent, sweeping).
+
+## Tones
+
+Joyful, melancholic, suspenseful, hopeful, ironic, tender, urgent, serene.
+
+## Lengths
+
+Short (~120 words), Medium (~300 words), Long (~600 words).
+
+## How to use
+
+1. Choose a mode: Generate, Continue, or Rewrite.
+2. Pick a genre and seed a topic (or paste text for Continue / Rewrite).
+3. Tune style, tone, and length.
+4. Let the muse write; text streams in live.
+5. Preview in Markdown, save the draft locally, or export as Markdown.
+
+## FAQ
+
+Is it free? Yes. Completely free, with no signup and no API key.
+
+Do I need an account? No. There are no accounts and no login.
+
+Where do my drafts go? Nowhere. Drafts are stored only in your browser (IndexedDB) and never uploaded.
+
+Does it need an API key? No. AI runs through g4f (gpt4free) with multi-provider failover, keyless.
+
+What if the AI is down? Your text is never touched — you keep writing by hand and can retry later.
+
+Is my writing private? Yes. No backend, no accounts, no analytics. Prompts go directly from your browser to the g4f provider chain; drafts never leave your device.
+
+## Tech
+
+Client-only Astro static site with React 19 islands and Tailwind v4. AI via @chirag127/oz-ai (wraps g4f / gpt4free, multi-provider failover, keyless). Markdown via marked (lazy-loaded). Drafts in IndexedDB. PWA-installable. 100% in-browser: no upload, no signup, no server.
+
+## Links
+
+- Live app: https://muse.oriz.in
+- Info page: https://chirag127.github.io/oriz-muse/
+- Source code: https://github.com/chirag127/oriz-muse
+- License: MIT © 2026 Chirag Singhal

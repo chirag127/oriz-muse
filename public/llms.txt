@@ -1,0 +1,28 @@
+# Muse — Free AI Writing Studio
+
+> Free, 100% client-side AI writing studio at https://muse.oriz.in. Generate short stories, poems, song lyrics, blog posts, essays, and screenplays; continue an existing draft in your own voice; or rewrite any passage in a chosen style and tone. Runs entirely in your browser — no upload, no signup, no API key. AI runs through g4f (gpt4free) with multi-provider failover; drafts are stored only on your device (IndexedDB).
+
+## Core features
+
+- [Generate](https://muse.oriz.in/#studio): Pick a genre (story, poem, lyrics, blog, essay, screenplay), seed a topic, and tune style, tone, and length. Text streams in live.
+- [Continue](https://muse.oriz.in/#studio): Paste an existing draft; the muse matches your voice, tense, and style and writes what comes next.
+- [Rewrite](https://muse.oriz.in/#studio): Recast any passage into a different style (Noir, Gothic, Hemingway, Shakespearean, Poetic, Minimalist, ...) and tone.
+- [Prompt library](https://muse.oriz.in/#studio): Curated starter prompts per genre, loaded with one click.
+- [Drafts](https://muse.oriz.in/#studio): Save, reload, and delete drafts stored only on this device (IndexedDB).
+- [Import / export](https://muse.oriz.in/#studio): Drag-drop a .md or .txt to load; export your work as Markdown. Live Markdown preview.
+
+## Genres
+
+- Story — short fiction and scenes
+- Poem — verse in any form
+- Lyrics — songs with verse / chorus / bridge structure
+- Blog — posts and articles
+- Essay — argument and reflection
+- Screenplay — scenes in standard script form
+
+## About
+
+- [Live app](https://muse.oriz.in): The writing studio itself.
+- [Info page](https://chirag127.github.io/oriz-muse/): What Muse is, its features, and its tech.
+- [Source code](https://github.com/chirag127/oriz-muse): MIT-licensed repo on GitHub.
+- [Full LLM text](https://muse.oriz.in/llms-full.txt): Complete site content as clean markdown for AI ingestion.

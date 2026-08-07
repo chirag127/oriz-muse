@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About Muse — AI Writing Studio | oriz-muse</title>
+<meta name="description" content="About oriz-muse: a free, 100% client-side AI writing studio (stories, poems, lyrics, blog, essays). This is the project info page — the live tool is at muse.oriz.in." />
+<link rel="canonical" href="https://chirag127.github.io/oriz-muse/" />
+<style>
+  :root { color-scheme: light dark; --fg:#1a1a1a; --muted:#555; --bg:#fafafa; --card:#fff; --border:#e4e4e4; --accent:#7a5cff; }
+  @media (prefers-color-scheme: dark) { :root { --fg:#eaeaea; --muted:#a0a0a0; --bg:#141414; --card:#1d1d1d; --border:#333; --accent:#9d86ff; } }
+  * { box-sizing: border-box; }
+  body { margin:0; font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:720px; margin:0 auto; padding:3rem 1.25rem 4rem; }
+  .badge { display:inline-block; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); border:1px solid var(--accent); border-radius:999px; padding:.2rem .7rem; }
+  h1 { font-size:2rem; margin:.8rem 0 .3rem; }
+  .tagline { color:var(--muted); font-size:1.1rem; margin:0 0 1.5rem; }
+  .cta { display:flex; gap:.7rem; flex-wrap:wrap; margin:1.5rem 0 2rem; }
+  a.btn { text-decoration:none; padding:.6rem 1.1rem; border-radius:8px; font-weight:600; border:1px solid var(--border); color:var(--fg); background:var(--card); }
+  a.btn.primary { background:var(--accent); border-color:var(--accent); color:#fff; }
+  h2 { font-size:1.15rem; margin:2rem 0 .6rem; }
+  ul { padding-left:1.2rem; }
+  li { margin:.35rem 0; }
+  .note { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1rem 1.2rem; margin:1.5rem 0; color:var(--muted); }
+  code { background:var(--card); border:1px solid var(--border); border-radius:4px; padding:.1rem .35rem; font-size:.9em; }
+  footer { margin-top:2.5rem; padding-top:1.2rem; border-top:1px solid var(--border); color:var(--muted); font-size:.9rem; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <span class="badge">Project info</span>
+  <h1>Muse — AI Writing Studio</h1>
+  <p class="tagline">An AI writing studio for stories, poems, lyrics, and blogs — rewrite, continue, generate. This page is <em>about</em> the project; the live tool lives elsewhere.</p>
+
+  <div class="cta">
+    <a class="btn primary" href="https://muse.oriz.in">Open the live app →</a>
+    <a class="btn" href="https://github.com/chirag127/oriz-muse">Source on GitHub</a>
+    <a class="btn" href="https://muse.oriz.in/llms.txt">llms.txt</a>
+  </div>
+
+  <div class="note">This is the project info page. To actually write, use the live app at <a href="https://muse.oriz.in">muse.oriz.in</a>.</div>
+
+  <h2>What it is</h2>
+  <p>Muse is a free AI writing studio: draft short <strong>stories</strong>, <strong>poems</strong>, song <strong>lyrics</strong>, <strong>blog</strong> posts, <strong>essays</strong>, and <strong>screenplays</strong>. Seed a topic to generate, hand it a draft to <strong>continue</strong> in your voice, or <strong>rewrite</strong> any passage in a chosen style and tone.</p>
+
+  <h2>Key features</h2>
+  <ul>
+    <li><strong>Generate</strong> — pick a genre, seed a topic, tune style, tone, and length; text streams in live.</li>
+    <li><strong>Continue</strong> — matches your voice, tense, and style and adds what comes next.</li>
+    <li><strong>Rewrite</strong> — recast a passage into Noir, Gothic, Hemingway, Shakespearean, Poetic, Minimalist, and more.</li>
+    <li><strong>Prompt library</strong> — curated starter prompts per genre, one click to load.</li>
+    <li><strong>Drafts</strong> — save, reload, and delete drafts stored only on your device.</li>
+    <li><strong>Import / export</strong> — drop a <code>.md</code> / <code>.txt</code> to load; export as Markdown; live preview.</li>
+  </ul>
+
+  <h2>Tech</h2>
+  <ul>
+    <li>Client-only <strong>Astro</strong> static site with React islands.</li>
+    <li>AI via <strong>g4f (gpt4free)</strong> through <code>@chirag127/oz-ai</code>, with multi-provider failover — <strong>no API key</strong>.</li>
+    <li><strong>PWA-installable</strong>.</li>
+    <li><strong>100% in-browser</strong>: no upload, no signup, no server. Drafts stay in IndexedDB on your device.</li>
+  </ul>
+
+  <footer>
+    <p>Free &amp; MIT-licensed. Live app: <a href="https://muse.oriz.in">muse.oriz.in</a> · Repo: <a href="https://github.com/chirag127/oriz-muse">chirag127/oriz-muse</a></p>
+  </footer>
+</main>
+</body>
+</html>

@@ -1,10 +1,12 @@
 # oriz-muse
 
-**Live: https://muse.oriz.in**
+**Live app:** https://muse.oriz.in
+**About / info:** https://chirag127.github.io/oriz-muse/
+**llms.txt:** https://muse.oriz.in/llms.txt
 
-A romantic writing atelier in your browser. Generate stories, poems, lyrics, blogs, essays, and screenplays; continue an existing draft; rewrite a passage in a chosen style; keep a prompt library; and save drafts.
+Free AI writing studio in your browser — generate stories, poems, lyrics, blog posts, essays, and screenplays; continue an existing draft in your own voice; or rewrite any passage in a chosen style and tone.
 
-**100% client-side — no upload, no signup, no key.** Every keystroke and every draft stays in your browser (IndexedDB). AI runs through [`@chirag127/oz-ai`](https://github.com/chirag127/design-system) (wraps g4f / gpt4free with multi-provider failover), so it works without an API key — and if every provider is down, your text is untouched and you keep writing by hand.
+**100% client-side, no upload, no signup, free.** Every keystroke and every draft stays in your browser (IndexedDB). AI runs through [`@chirag127/oz-ai`](https://github.com/chirag127/oz-ai) (wraps g4f / gpt4free with multi-provider failover), so it works without an API key — and if every provider is down, your text is untouched and you keep writing by hand.
 
 ![client-side](https://img.shields.io/badge/client--side-100%25-b04a5a)
 ![no server](https://img.shields.io/badge/server-none-241a17)
@@ -14,34 +16,16 @@ A romantic writing atelier in your browser. Generate stories, poems, lyrics, blo
 
 - **Generate** — pick a genre (story / poem / lyrics / blog / essay / screenplay), seed a topic, tune style, tone, and length.
 - **Continue** — hand the pen to the muse; it matches your voice, tense, and style and adds what comes next.
-- **Rewrite** — recast any passage into a different style (Noir, Gothic, Hemingway, Shakespearean, …) and tone.
+- **Rewrite** — recast any passage into a different style (Noir, Gothic, Hemingway, Shakespearean, ...) and tone.
 - **Prompt library** — curated starter prompts per genre, one click to load.
 - **Drafts** — save, reload, and delete drafts stored only on this device.
 - **Preview** — Markdown preview (lazy-loaded `marked`).
 - **Import / export** — drag-drop a `.md` / `.txt` to load, export your work as Markdown.
 - **Streaming** — text streams in with a signature gold-nib ink-flow motion.
 
-## Design
+## Tech
 
-Bespoke "romantic atelier" identity: ink + blush + gold-leaf on paper-grain, flowing serif display (Cormorant + EB Garamond), a poet's writing-desk layout, and a quill ink-flow signature as text streams in. WCAG-AA contrast, responsive (390px → 1440px), dark-mode aware.
-
-## Architecture
-
-```mermaid
-flowchart LR
-  U[Writer] -->|topic / draft| S[Studio island - React]
-  S -->|build prompt| P[prompt.ts - pure]
-  S -->|stream| A["@chirag127/oz-ai"]
-  A -->|failover| G[g4f providers]
-  S -->|save / load| D[(IndexedDB drafts)]
-  S -->|preview| M[marked - lazy]
-  S -->|import / export| F["@chirag127/oz-file"]
-  S -.->|chrome + tokens| C["@chirag127/oz-chrome + oz-tokens-base"]
-```
-
-## Stack
-
-Astro (static) · React 19 islands · Tailwind v4 (`@tailwindcss/vite`) · `@astrojs/sitemap` · shared `@chirag127/oz-*` packages · `marked` · IndexedDB.
+Client-only Astro static site with React 19 islands and Tailwind v4. AI via `@chirag127/oz-ai` (g4f / gpt4free, keyless, multi-provider failover). Markdown via `marked` (lazy). Drafts in IndexedDB. PWA-installable. No backend, no accounts, no analytics.
 
 ## Develop
 
@@ -49,16 +33,17 @@ Astro (static) · React 19 islands · Tailwind v4 (`@tailwindcss/vite`) · `@ast
 npm install --legacy-peer-deps
 npm run dev       # local dev
 npm test          # vitest — pure logic
-npm run build     # static build → dist/
+npm run build     # static build -> dist/
 npm run deploy    # build + wrangler pages deploy
 ```
 
-> Windows: use **npm**, not pnpm (pnpm skips `@esbuild/win32-x64` → the Astro build crashes).
+> Windows: use **npm**, not pnpm (pnpm skips `@esbuild/win32-x64` -> the Astro build crashes).
 
-## Privacy
+## Two surfaces
 
-No backend. No accounts. No analytics. Prompts go directly from your browser to the g4f provider chain; drafts never leave your device.
+- **Live app** (Cloudflare Pages) — the writing studio at https://muse.oriz.in
+- **Info page** (GitHub Pages) — a separate "about this project" page at https://chirag127.github.io/oriz-muse/, published from `gh-info/` by `.github/workflows/gh-pages-info.yml`.
 
 ## License
 
-MIT © 2026 Chirag Singhal
+MIT (c) 2026 Chirag Singhal
