@@ -7,9 +7,21 @@ interface Props {
   description?: string
 }
 const {
-  title = 'oriz-muse — AI writing studio',
-  description = 'A romantic writing atelier in your browser. Generate stories, poems, lyrics, blogs & essays, continue your draft, restyle prose, keep a prompt library, and save drafts — 100% client-side, no signup.',
+  title = 'Muse — Free AI Writing Studio · Stories, Poems, Lyrics, No Signup',
+  description = 'Free AI writing studio in your browser. Generate stories, poems, song lyrics, blogs & essays, continue a draft, or rewrite prose in any style — 100% client-side, no upload, no signup.',
 } = Astro.props
+const canonical = 'https://muse.oriz.in'
+const ogImage = `${canonical}/favicon.svg`
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Muse — AI Writing Studio',
+  applicationCategory: 'ProductivityApplication',
+  operatingSystem: 'Web',
+  url: canonical,
+  description,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+}
 ---
 
 <!doctype html>
@@ -20,15 +32,18 @@ const {
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://muse.oriz.in" />
-    <link rel="canonical" href="https://muse.oriz.in" />
-    <meta name="theme-color" content="#b04a5a" />
-    <link rel="manifest" href="/manifest.webmanifest" />
-    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
-    <script is:inline src="/registerSW.js"></script>
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Muse" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
     <OzToolShell site="muse" title="Muse" wordmarkHref="https://oriz.in">

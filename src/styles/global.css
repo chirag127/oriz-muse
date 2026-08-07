@@ -8,7 +8,7 @@ body {
 
 .muse-hero {
   text-align: center;
-  padding: clamp(2rem, 6vw, 4.5rem) 1rem 2rem;
+  padding: clamp(2.5rem, 7vw, 5rem) 1rem 1.5rem;
 }
 .muse-hero__kicker {
   font-family: var(--oz-font-body);
@@ -21,26 +21,30 @@ body {
 .muse-hero__title {
   font-family: var(--oz-font-display);
   font-weight: 600;
-  font-size: clamp(2.6rem, 8vw, 5rem);
-  line-height: 1.02;
+  font-size: clamp(2.4rem, 7vw, 4.6rem);
+  line-height: 1.04;
   letter-spacing: -0.01em;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 18ch;
   color: var(--muse-ink);
+  text-wrap: balance;
 }
 .muse-hero__title em {
   font-style: italic;
   color: var(--muse-blush);
 }
 .muse-hero__sub {
-  max-width: 42ch;
-  margin: 1rem auto 0;
+  max-width: 46ch;
+  margin: 1.1rem auto 0;
   font-size: 1.15rem;
+  line-height: 1.6;
   color: var(--muse-ink-mute);
+  text-wrap: balance;
 }
 .muse-hero__flourish {
   width: 8rem;
   height: 1px;
-  margin: 1.5rem auto 0;
+  margin: 2rem auto 0;
   background: linear-gradient(90deg, transparent, var(--muse-gold), transparent);
   position: relative;
 }
@@ -54,31 +58,6 @@ body {
   background: var(--muse-parchment);
   padding: 0 0.5rem;
   font-size: 1rem;
-}
-
-.muse-feats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin: 2rem auto 0;
-  max-width: 60rem;
-}
-.muse-feat {
-  border: 1px solid var(--muse-rule);
-  border-radius: var(--oz-radius-l);
-  background: color-mix(in oklab, var(--oz-surface) 70%, transparent);
-  padding: 1rem 1.1rem;
-}
-.muse-feat h3 {
-  font-family: var(--oz-font-display);
-  font-size: 1.3rem;
-  margin: 0 0 0.25rem;
-  color: var(--muse-blush);
-}
-.muse-feat p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--muse-ink-mute);
 }
 
 .muse-cta {
@@ -96,4 +75,15 @@ body {
 }
 .muse-cta:hover {
   transform: translateY(-2px);
+}
+
+.muse-intro {
+  max-width: 60ch;
+  margin: 2.5rem auto 0;
+  padding: 0 1rem;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--muse-ink-mute);
+  font-family: var(--oz-font-body);
 }

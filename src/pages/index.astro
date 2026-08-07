@@ -7,24 +7,26 @@ import '../styles/studio.css'
 <Base>
   <section class="muse-hero">
     <p class="muse-hero__kicker">The writing atelier</p>
-    <h1 class="muse-hero__title">Sit at the <em>writing desk</em>.</h1>
+    <h1 class="muse-hero__title">
+      Free <em>AI writing studio</em> — stories, poems &amp; lyrics
+    </h1>
     <p class="muse-hero__sub">
-      Generate a story, poem, lyric, blog, or essay. Let the muse continue your
-      draft, or restyle a passage. Keep a prompt library and save your work —
-      all in your browser, nothing uploaded.
+      Generate, continue, or rewrite prose in any voice. Runs entirely in your
+      browser — no upload, no signup, no cost.
     </p>
-    <div class="muse-hero__flourish" aria-hidden="true"></div>
     <a class="muse-cta" href="#studio">Take up the quill ↓</a>
-
-    <div class="muse-feats">
-      <div class="muse-feat"><h3>Generate</h3><p>Six genres, ten voices, tuned by tone & length.</p></div>
-      <div class="muse-feat"><h3>Continue</h3><p>Hand the pen to the muse — it matches your voice.</p></div>
-      <div class="muse-feat"><h3>Rewrite</h3><p>Recast any passage in a chosen style.</p></div>
-      <div class="muse-feat"><h3>Keep</h3><p>Prompt library + drafts saved to this device only.</p></div>
-    </div>
+    <div class="muse-hero__flourish" aria-hidden="true"></div>
   </section>
 
   <section id="studio">
     <Studio client:load />
+
+    <p class="muse-intro">
+      Muse is a free, private AI writing tool for drafting short stories, poetry,
+      song lyrics, blog posts, and essays. Seed a topic and it drafts a passage,
+      hands you the pen to continue, or recasts your text in a chosen style —
+      tuned by genre, tone, and length. A prompt library and saved drafts live
+      only on this device.
+    </p>
   </section>
 </Base>
