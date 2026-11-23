@@ -1,16 +1,35 @@
 # oriz-muse
 
-**Live app:** https://muse.oriz.in
-**About / info:** https://chirag127.github.io/oriz-muse/
-**llms.txt:** https://muse.oriz.in/llms.txt
+> Free AI writing studio in your browser — generate, continue, and rewrite prose. 100% client-side.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-b8893a.svg)](./LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/chirag127/oriz-muse?style=social)](https://github.com/chirag127/oriz-muse/stargazers)
+[![last commit](https://img.shields.io/github/last-commit/chirag127/oriz-muse)](https://github.com/chirag127/oriz-muse/commits/main)
+[![Astro](https://img.shields.io/badge/built%20with-Astro-ff5d01?logo=astro&logoColor=white)](https://astro.build)
+![client-side](https://img.shields.io/badge/client--side-100%25-b04a5a)
+
+- **Live app:** https://muse.oriz.in _(canonical — Cloudflare Pages)_
+- **About / info:** https://chirag127.github.io/oriz-muse/ _(GitHub Pages landing)_
+- **Repo:** https://github.com/chirag127/oriz-muse
+- **llms.txt:** https://muse.oriz.in/llms.txt
 
 Free AI writing studio in your browser — generate stories, poems, lyrics, blog posts, essays, and screenplays; continue an existing draft in your own voice; or rewrite any passage in a chosen style and tone.
 
 **100% client-side, no upload, no signup, free.** Every keystroke and every draft stays in your browser (IndexedDB). AI runs through [`@chirag127/oz-ai`](https://github.com/chirag127/oz-ai) (wraps g4f / gpt4free with multi-provider failover), so it works without an API key — and if every provider is down, your text is untouched and you keep writing by hand.
 
-![client-side](https://img.shields.io/badge/client--side-100%25-b04a5a)
-![no server](https://img.shields.io/badge/server-none-241a17)
-![license](https://img.shields.io/badge/license-MIT-b8893a)
+**⭐ If this is useful, please [star the repo](https://github.com/chirag127/oriz-muse/stargazers) — it helps others find it.**
+
+## How it works
+
+```mermaid
+flowchart LR
+    Mode{Generate / Continue / Rewrite} --> Prompt[Build prompt<br/>genre · style · tone · length]
+    Prompt --> AI["@chirag127/oz-ai<br/>g4f, keyless, failover"]
+    AI -->|stream| Editor[Editor + gold-nib ink motion]
+    Editor --> Store[(IndexedDB drafts)]
+    Editor <-->|drag-drop / export| MD[Markdown .md / .txt]
+    Editor --> Preview["Markdown preview (marked, lazy)"]
+```
 
 ## What it does
 
@@ -43,6 +62,24 @@ npm run deploy    # build + wrangler pages deploy
 
 - **Live app** (Cloudflare Pages) — the writing studio at https://muse.oriz.in
 - **Info page** (GitHub Pages) — a separate "about this project" page at https://chirag127.github.io/oriz-muse/, published from `gh-info/` by `.github/workflows/gh-pages-info.yml`.
+
+## Part of the oriz family
+
+One of ~80 small, fast, single-purpose tools and sites in the **oriz** fleet — see [blog.oriz.in](https://blog.oriz.in) for how it's built and run solo. Sibling tools: [persona.oriz.in](https://persona.oriz.in) · [quiz.oriz.in](https://quiz.oriz.in) · [json.oriz.in](https://json.oriz.in) · [name.oriz.in](https://name.oriz.in).
+
+**Cost:** $0 — static build hosted free on Cloudflare Pages; AI is keyless (g4f) and client-side.
+
+## Contributing
+
+Issues and PRs welcome. Conventional commits are the changelog.
+
+## Author
+
+Chirag Singhal · chirag@oriz.in
+
+## Status
+
+Stable.
 
 ## License
 
